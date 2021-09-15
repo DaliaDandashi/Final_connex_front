@@ -1,0 +1,14 @@
+.GEO_img{
+ position: absolute;
+
+border-bottom: none;
+background-position: center;
+background-size: cover;
+height: 80%;
+width: 100%;
+background-repeat: no-repeat;
+z-index: 0;
+
+
+    
+}
