@@ -1,25 +1,24 @@
 import React, { Fragment } from 'react';
-import Navbar from './components/Navbar';
+// import Navbar from './components/Navbar';
 import Routers from './components/Routers';
 import { withRouter } from 'react-router-dom';
+import SessionProvider from './components/session/SessionProvider';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+//  import Footer from './components/footer/Footer';
 
 
-
-// import Footer from './components/footer';
-
-
-
-
-
-function App() {
+function App(props) {
   return (
-
-    <Fragment>
-      <Navbar />
-      <Routers />
-      
-    </Fragment>
-
+    <SessionProvider>
+      <Fragment>
+        {/* <Navbar /> */}
+        <Routers {...props} />
+        <ToastContainer />
+        {/* <Footer/> */}
+      </Fragment>
+    </SessionProvider>
 
   );
 }

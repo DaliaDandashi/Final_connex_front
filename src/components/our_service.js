@@ -11,7 +11,7 @@ export default function our_service() {
             <div className="container">
                 <body className="sa_section1">
                     <h2 className="sa_firsth">_______________</h2>
-                    <h1 className="sa_ourstory"> OUR SERVICES</h1>
+                    <h2 className="sa_ourstory"> OUR SERVICES</h2>
                     <h2 className="sa_secondh">____________</h2>
 
                 </body>

@@ -1,0 +1,35 @@
+.want{
+    color: #be0c0c;
+    height: 15px;
+}
+.anim1{
+   
+    color: #be0c0c;
+    position: relative;
+    text-align: center;
+    animation: mymove 2s 1;
+    font-size: large;
+   
+}
+.anim2{
+   
+ 
+  animation: mymove1 2s 1;
+}
+
+
+.section{
+    margin-left: 2%;
+    margin-right: 2%;
+
+    padding: 0;
+}
+
+  @keyframes mymove {
+    from {left: -600px;}
+    to {left: 0px;}
+  }
+  @keyframes mymove1 {
+    from {right: 600px;}
+    to {right: 0px;}
+  }

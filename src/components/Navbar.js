@@ -1,5 +1,6 @@
-import React, { useState, Fragment } from 'react'
+import React, { useState, Fragment, useContext } from 'react'
 import { FaBars } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import {
     Nav,
     NavContainer,
@@ -9,8 +10,15 @@ import {
     NavMenu,
     MobileIcon,
 } from './NavbarStyles';
+import SessionContext from './session/SessionContext';
 import '../App.css';
 const Navbar = () => {
+
+    const {
+        session: { user },
+        actions: { logout }
+    } = useContext(SessionContext);
+
     const [colorChange, setColorchange] = useState(false);
     const changeNavbarColor = () => {
         if (window.scrollY >= 80) {
@@ -37,20 +45,58 @@ const Navbar = () => {
                     </MobileIcon>
                     <NavMenu>
                         <NavItem>
-                            <NavLinks href="/Home_page">Home Page</NavLinks>
+                            <NavLinks href="/">Home Page</NavLinks>
                         </NavItem>
                         <NavItem>
                             <NavLinks href="/about_us">About Us</NavLinks>
                         </NavItem>
                         <NavItem>
-                            <NavLinks href="/contact_us">Contact Us</NavLinks>
+                            <NavLinks href="/get_in_touch">Contact Us</NavLinks>
                         </NavItem>
                         <NavItem>
-                            <NavLinks href="/Registration">Registration</NavLinks>
+                            <NavLinks href="/Reservation">Reservation</NavLinks>
                         </NavItem>
-                        <NavItem>
-                            <NavLinks href="Login">Login</NavLinks>
-                        </NavItem>
+
+                        {user.token && user.role == 1 &&
+                            <NavItem>
+                                <NavLinks href="/Entry_Dash_Admin">Dashboard</NavLinks>
+                            </NavItem>
+                        }
+
+                        {user.token &&
+                            <NavItem>
+                                <NavLinks href="/profile">Profile</NavLinks>
+                            </NavItem>
+                        }
+
+
+                        {user.token ?
+                            (<button onClick={logout} style={{
+                                color: ' #be0c0c',
+                                fontSize: '20px',
+                                fontWeight: 'bold',
+                                backgroundColor: 'transparent',
+                                borderColor: 'transparent',
+                            }}>
+                                logout
+                            </button>) :
+                            (<NavItem>
+
+                                <NavLinks href="/login"
+                                    style={{
+                                        color: ' #be0c0c',
+                                        fontSize: '20px',
+                                        fontWeight: 'bold',
+                                    }}
+                                >
+                                    Login
+                                </NavLinks>
+                            </NavItem>)
+
+
+
+                        }
+
                     </NavMenu>
                 </NavContainer>
             </Nav>
