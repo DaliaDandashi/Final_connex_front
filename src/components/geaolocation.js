@@ -22,6 +22,9 @@ export default function geolocation() {
                         <p>Take X min</p>
                     </div>
                 </div>
+                {/* <div id="A">
+
+                </div> */}
 
             </div>
         </div>

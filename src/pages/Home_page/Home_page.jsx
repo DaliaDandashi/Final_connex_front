@@ -14,14 +14,26 @@ export default function Home_page() {
 
     return (
         <div>
-            <Navbar/>
+            <Navbar />
             <img className="banner" src={img} />
-            <div style={{ overflowY: "scroll", height: "450px" }}></div>
+
+            <div style={{ overflowY: "scroll", height: "450px" }} className="div_home_style">
+                <center>
+                <h1 className="H1_A_H">FAST  &  SAFE</h1>
+                <h2 className="H2_A_H">BUS SERVICE</h2>
+                {/* <a href="#" id="download">Download</a> */}
+                </center>
+            </div>
+
             <div><Our_service /></div>
-            <div><Geolocation /></div>
-            <div><Maps/></div>
-            <div className="Home_footer">
-                <Footer />
+            <div className="M_G">
+                <div><Maps /></div>
+                <div id="A"></div>
+                <div className="Home_geo"><Geolocation /></div>
+
+                <div className="Home_footer">
+                    <Footer />
+                </div>
             </div>
 
 

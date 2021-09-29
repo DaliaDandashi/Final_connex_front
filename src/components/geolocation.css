@@ -1,6 +1,6 @@
 .tripdiv{
     position: absolute;
-    background-image: url('/src/components/image/blue.jpg');
+    background-image: url('/src/components/image/wav5.png');
     background-repeat: no-repeat;
     border-bottom: none;
     background-position: center;
@@ -26,8 +26,8 @@
         font-family: Georgia;
         color: #ffffff;
         font-size: 30px;
-        padding: 13px 20px 10px 20px;
-        margin-top: 3%;
+        padding: 10px 20px 10px 20px;
+        margin-top: 1%;
         border: solid #13449F 2px;
         text-decoration: none;
       }
@@ -43,14 +43,15 @@
       }
 .request_position{
     text-align: center;
-    padding-top: 6rem;
+    padding-top: 2rem;
 }
 .Icon_clock{
         height: 2.5rem;
         width:2.5rem;
-        padding-top: 2rem;
+        padding-top: 1rem;
     
 }
 .p_Icon{
   flex-direction: row;
 }
+
