@@ -22,19 +22,19 @@ export default function about1() {
 
               <img class="mycall" src="assets/img/call.png" alt="no picture" />
               <p class="cc">Call us</p>
-              <p >+961 03 206 718 | Tripoli</p>
-              <p >+961 03 206 384 | Beirut</p>
+              <p class="pp">+961 03 206 718 | Tripoli</p>
+              <p class="pp">+961 03 206 384 | Beirut</p>
               <p></p>
             </div>
             <div class="col-lg-4" className="second">
               <img class="mycall" src="assets/img/send-mail.png" alt="no picture" />
               <p class="cc">Email us</p>
-              <p>connexiontransportaion@gmail.com </p>
+              <p class="pp">connexiontransportaion@gmail.com </p>
             </div>
             <div class="col-lg-4" className="third">
               <img class="mycall" src="assets/img/pin.png" alt="no picture" />
               <p class="cc"> Offices</p>
-              <p>Nour square st, Tripoli,Lebanon</p>
+              <p class="pp">Nour square st, Tripoli,Lebanon</p>
             </div>
           </div>
         </div>

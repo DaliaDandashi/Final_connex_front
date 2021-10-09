@@ -28,7 +28,7 @@ export default function ListUser() {
                     <tr className="tr_tab_List">
                         <td className="td_tab_List">First Name</td>
                         <td className="td_tab_List">Last Name</td>
-                        <td className="td_tab_List">phone Number</td>
+                        <td className="td_tab_List">Phone Number</td>
                         <td className="td_tab_List">Pickup Address</td>
                         <td className="td_tab_List">Trip</td>
                         <td className="td_tab_List">Date</td>

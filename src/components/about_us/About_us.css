@@ -141,7 +141,8 @@
   top: 0;
   bottom: 0;
   left: 0;
-  background-color: #154758;
+  /* background-color: #154758; */
+  background-color: #027b9a;
   height: 120%;
   width: 45%;
   border-right-style: solid;

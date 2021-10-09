@@ -15,6 +15,7 @@ import Adminpanel from '../pages/admin_panel/Adminpanel'
 import DashboardDriver from '../pages/DashboardDriver/DashboardDriver'
 import List_user from '../pages/List_user/List_user'
 import Edit_driver from '../pages/Driver/Edit_driver.jsx'
+import Check_place from '../pages/Check_place/Check_place'
 
 
 ///// DashBoard Admin
@@ -50,6 +51,7 @@ export default function Router() {
                 <PrivateRoute path="/Profile" component={Profile} user={user} />
                 <PrivateRoute path="/List_driver" component={List_driver} user={user} />
                 <PrivateRoute path="/Edit_driver/:id" component={Edit_driver} user={user} />
+                <Route path="/Check_place" component={Check_place} user={user} />
             </Switch>
 
 

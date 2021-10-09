@@ -64,30 +64,30 @@ export default function Getin3() {
 
 						<div class="DA_input DA_wide">
 
-							<input type="text" required className="DA_input_get" name="name" value={state.name} onChange={handleChange} />
+							<input type="text"  className="DA_input_get" name="name" value={state.name} onChange={handleChange} required/>
 							<label>Name</label>
 						</div>
 					</div>
 					<div class="DA_col-md-6 DA_col-sm-12">
 						<div class="DA_input">
-							<input type="text" required className="DA_input_get" name="email" value={state.email} onChange={handleChange} />
+							<input type="text"  className="DA_input_get" name="email" value={state.email} onChange={handleChange} required/>
 							<label>Email</label>
 						</div>
 					</div>
 					<div class="DA_col-md-6 cDA_ol-sm-12">
 						<div class="DA_input" style={{ float: 'right' }}>
-							<input type="text" required className="DA_input_get" name="phonenumber" value={state.phonenumber} onChange={handleChange} />
+							<input type="text"  className="DA_input_get" name="phonenumber" value={state.phonenumber} onChange={handleChange} required />
 							<label>Phone Number</label>
 						</div>
 					</div>
 					<div class="DA_col-xs-12">
 						<div class="DA_input DA_wide">
-							<textarea className="DA_itextarea_get" required name="message" value={state.message} onChange={handleChange}></textarea>
+							<textarea className="DA_itextarea_get"  name="message" value={state.message} onChange={handleChange} required></textarea>
 							<label>Message</label>
 						</div>
 					</div>
 					<div class="DA_col-xs-12">
-						<button class="DA_btn-lrg DA_submit-btn" type="button" onClick={postmssg}>Send Message</button>
+						<button class="DA_btn-lrg DA_submit-btn" type="button" onClick={postmssg} >Send Message</button>
 					</div>
 				</div>
 

@@ -1,5 +1,5 @@
 import react, { useEffect, useState } from 'react';
-import './reservation.css';
+import './Reservation.css';
 import TextField from "@material-ui/core/TextField";
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from "@material-ui/core/FormControl";
@@ -29,6 +29,7 @@ export default function Reservation() {
 
     async function makeapp(e) {
         e.preventDefault();
+
         let body = {
             tripe_title: trip,
             route: "route"
@@ -54,7 +55,7 @@ export default function Reservation() {
                 let y = axios.post(`http://localhost:8000/bus`, rbody).then(
                     dalia => {
                         //let id_buss = dalia.data.result.insertId;
-                       // console.log(id_buss)
+                        // console.log(id_buss)
                         console.log({ dalia })
 
 
@@ -104,66 +105,74 @@ export default function Reservation() {
                             <tr>
                                 <td>
                                     <TextField
-                                        onChange={(e) => setfirstname(e.target.value)}
+                                        required
+                                        type="text"
                                         variant="outlined"
                                         margin="normal"
-                                        required
                                         fullWidth
                                         id="first name"
                                         label="First Name"
-                                        type="text"
                                         autoComplete="first name"
                                         autoFocus
                                         name="name"
+                                        size="small"
+                                        onChange={(e) => setfirstname(e.target.value)}
 
                                     /> </td>
                                 <td>
                                     <TextField
-                                        onChange={(e) => setlastname(e.target.value)}
+                                        required
+                                        type="text"
                                         variant="outlined"
                                         margin="normal"
-                                        required
                                         fullWidth
                                         id="last name"
                                         label="Last Name"
-                                        type="text"
                                         autoComplete="last name"
                                         autoFocus
-                                        name="lastname" />
+                                        name="lastname"
+                                        size="small"
+                                        onChange={(e) => setlastname(e.target.value)}
+                                    />
                                 </td>
                             </tr>
                             <tr>
-                                <td>  <TextField
-                                    onChange={(e) => setphonenumber(e.target.value)}
+                                <td> 
+                                     <TextField
+                                    required
                                     variant="outlined"
                                     margin="normal"
-                                    required
+                                    type="text"
                                     fullWidth
                                     id="phone number"
                                     label="Phone number"
-                                    type="text"
                                     autoComplete="phone number"
                                     autoFocus
-                                    name="phone number" />
+                                    name="phone number"
+                                    size="small"
+                                    onChange={(e) => setphonenumber(e.target.value)}
+                                />
                                 </td>
                                 <td> <TextField
-                                    onChange={(e) => setpickup_address(e.target.value)}
+                                    type="text"
                                     variant="outlined"
                                     margin="normal"
                                     // required
                                     fullWidth
                                     id="address"
                                     label="Pick up Address"
-                                    type="text"
                                     autoComplete="address"
                                     autoFocus
-                                    name="address" /></td>
+                                    name="address"
+                                    size="small"
+                                    onChange={(e) => setpickup_address(e.target.value)}
+                                /></td>
                             </tr>
                             <tr>
                                 <td><TextField
+                                 required
                                     variant="outlined"
                                     margin="normal"
-                                    required
                                     fullWidth
                                     id="date_reservation"
                                     // label="Date of Reservation"
@@ -172,6 +181,7 @@ export default function Reservation() {
                                     autoFocus
                                     name="date_reservation"
                                     onChange={(e => setdate(e.target.value))}
+                                    size="small"
                                 /></td>
                                 <td>
                                     <FormControl fullWidth>
@@ -182,6 +192,7 @@ export default function Reservation() {
                                             value={trip}
                                             label="Trip"
                                             onChange={(e) => dd(settrip(e.target.value))}
+                                            size="small"
 
                                         >
                                             <MenuItem >Type of Trip </MenuItem>
@@ -197,14 +208,16 @@ export default function Reservation() {
 
                             {sahar == "Tripoli-Beirut" ? (
                                 <div>
-                                    <FormControl style={{ minWidth: "30%", marginRight: "4%" }}>
-                                        <InputLabel id="type-tripe">Monday to Friday</InputLabel>
+                                    <FormControl style={{ minWidth: "30%", marginRight: "4%" }} >
+                                        <InputLabel id="type-tripe"  >Monday to Friday</InputLabel>
                                         <Select
+                                            // size="small"
                                             labelId="time"
                                             id="time"
                                             value={time}
                                             label="Time"
                                             onChange={(e) => settime(e.target.value)}
+
 
                                         >
 
@@ -317,7 +330,8 @@ export default function Reservation() {
 
                                 </div>)
                             }
-                            <div className="DA_Submit_div">  <button type="submit" className="DA_Submit"> Submit </button></div>
+                            <div className="DA_Submit_div">  <button type="submit" className="DA_Submit">
+                                Submit </button></div>
 
                         </div>
 

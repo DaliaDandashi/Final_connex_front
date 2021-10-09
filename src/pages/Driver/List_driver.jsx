@@ -34,6 +34,7 @@ export default function List_driver() {
 
         fetchData();
     }, []);
+    
     return (
 
 
@@ -52,6 +53,7 @@ export default function List_driver() {
                             <tr className="tr_tab_List">
                                 <td className="td_tab_List">First Name</td>
                                 <td className="td_tab_List">Last Name</td>
+                                <td className="td_tab_List">Username</td>
                                 <td className="td_tab_List">Phone Number</td>
                                 <td className="td_tab_List">Delete</td>
                                 <td className="td_tab_List">Edit</td>
@@ -63,6 +65,7 @@ export default function List_driver() {
 
                                     <td className="td_tab_List">{List_driver.firstname}</td>
                                     <td className="td_tab_List">{List_driver.lastname}</td>
+                                    <td className="td_tab_List">{List_driver.username}</td>
                                     <td className="td_tab_List">{List_driver.phonenumber}</td>
                                     <td className="td_tab_List"><button onClick={() => deletedrive(List_driver.id)} className="list_button">Delete</button></td>
                                     <td className="td_tab_List"><Link to={`Edit_driver/${List_driver.id}`} className="edit_list_driver">Edit</Link></td>

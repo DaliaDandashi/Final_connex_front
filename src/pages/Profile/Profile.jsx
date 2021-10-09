@@ -2,11 +2,13 @@ import axios from 'axios'
 import React, { useEffect, useState, useContext } from 'react'
 import API from '../../API';
 import NavBar from '../../components/Navbar'
+import { useHistory } from "react-router-dom";
+
 import SessionContext from '../../components/session/SessionContext'
 import './Profile.css';
 
 export default function Profile() {
-
+    const history = useHistory();
     const {
         session: { user: { id } }
     } = useContext(SessionContext);
@@ -69,7 +71,9 @@ export default function Profile() {
                         <input className="Prof_input" type="text" name="lastname" placeholder="LastName" value={state.lastname} onChange={handleChange} />
                         <input className="Prof_input" type="text" name="username" placeholder="Username" value={state.username} onChange={handleChange} />
                         <input className="Prof_input" type="text" name="phonenumber" placeholder="Phone Number" value={state.phonenumber} onChange={handleChange} />
-                        <button className="Prof_button" type="submit" value="Update Profile" > Save </button>
+                        <button className="Prof_button" type="submit" value="Update Profile"  onClick={() =>
+                        history.push({ pathname: `/List_driver` })
+                    }  > Save </button>
                     </fieldset>
                 </center>
             </form>

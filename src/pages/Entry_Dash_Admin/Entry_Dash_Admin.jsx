@@ -5,6 +5,7 @@ import Dashboard from "../../components/Dashboard/Dashboard";
 import './Entry_Dash_Admin.css';
 
 import SessionContext from '../../components/session/SessionContext';
+
 export default function Entry_Dash_Admin() {
 
     return (
@@ -13,7 +14,7 @@ export default function Entry_Dash_Admin() {
 
             {/* <div className="pad"> */}
                 <center>
-                    <h1 className="Entry_Admin_h1">hello Admin!</h1>
+                    <h1 className="Entry_Admin_h1">Hello Admin!</h1>
                 </center>
             
             {/* </div> */}

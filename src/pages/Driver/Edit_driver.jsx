@@ -10,19 +10,23 @@ export default function Edit_driver(props) {
     const [user, setuser] = useState("")
     const [firstname, setfirstname] = useState("")
     const [lastname, setlastname] = useState("")
-    const [phonenumber, setphonenumber] = useState("")
     const [username, setusername] = useState("")
+    const [phonenumber, setphonenumber] = useState("")
+   
 
     console.log(firstname)
 
     console.log(id)
+
     async function getdrive(id) {
+
         let y = await axios.get(`http://localhost:8000/user/${id}`)
         let p = y.data.result
         setfirstname(p.firstname)
         setlastname(p.lastname)
-        setphonenumber(p.phonenumber)
         setusername(p.username)
+        setphonenumber(p.phonenumber)
+        
     }
 
     useEffect(() => {
@@ -35,21 +39,24 @@ export default function Edit_driver(props) {
     )
 
     async function updrive(e) {
-        e.preventDefault();
 
-        let body = {
-            firstname: firstname,
-            lastname: lastname,
-            username: username,
-            phonenumber: phonenumber
+        e.preventDefault();
+       
+            let body = {
+                firstname: firstname,
+                lastname: lastname,
+                username: username,
+                phonenumber: phonenumber
+                
+               
+            }
+
+
+          await axios.put(`http://localhost:8000/user/${id}`, body).then(()=>{history.push('/List_driver')})
+         
         }
 
-
-        let y = await axios.put(`http://localhost:8000/user/${id}`, body)
-        console.log(y)
-    }
-
-
+    
 
     return (
 
@@ -58,13 +65,13 @@ export default function Edit_driver(props) {
             <form onSubmit={updrive} >
                 <div className="newDriverItem">
                     <TextField
+                        required
+                        type="text"
                         variant="outlined"
                         margin="normal"
-                        required
                         fullWidth
                         id="firstname"
                         label="Firstname"
-                        type="text"
                         autoComplete="firstname"
                         autoFocus
                         name="firstname"
@@ -76,13 +83,13 @@ export default function Edit_driver(props) {
                 <div className="newDriverItem">
 
                     <TextField
+                        required
+                        type="text"
                         variant="outlined"
                         margin="normal"
-                        required
                         fullWidth
                         id="lastname"
                         label="Lastname"
-                        type="text"
                         autoComplete="lastname"
                         autoFocus
                         name="lastname"
@@ -94,13 +101,13 @@ export default function Edit_driver(props) {
                 <div className="newDriverItem">
 
                     <TextField
+                        required
+                        type="text"
                         variant="outlined"
                         margin="normal"
-                        required
                         fullWidth
                         id="username"
                         label="Username"
-                        type="text"
                         autoComplete="username"
                         autoFocus
                         name="username"
@@ -111,22 +118,23 @@ export default function Edit_driver(props) {
 
                 <div className="newDriverItem">
                     <TextField
+                        required
+                        type="phonenumber"
                         variant="outlined"
                         margin="normal"
-                        required
                         fullWidth
                         id="phonenumber"
                         label="PhoneNumber"
-                        type="phonenumber"
                         autoComplete="phonenumber"
                         autoFocus
                         name="phonenumber"
                         value={phonenumber}
-                        onChange={(e) => setlastname(e.target.value)}
+                        onChange={(e) => setphonenumber(e.target.value)}
                     />
                 </div>
                 <div className="Sub_Back">
                     <div><button type='submit' className="button_add_driver"> Save</button></div>
+
                     <div> <button type='submit' className="button_add_driver" onClick={() =>
                         history.push({ pathname: `/List_driver` })
                     }  >

@@ -13,7 +13,7 @@ export default function DashboardDriver() {
 
             {/* <div className="pad"> */}
                 <center>
-                    <h1 className="Entry_Admin_h1">hello Driver!</h1>
+                    <h1 className="Entry_Admin_h1">Hello Driver!</h1>
                 </center>
             
             {/* </div> */}
